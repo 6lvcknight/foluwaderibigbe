@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80 mb-20">
+    <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg bg-[#1a1a1a]/70 mb-20">
       <div className="container px-4 mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
@@ -34,7 +34,7 @@ const Navbar = () => {
           </div>
         </div>
         {mobileDrawerOpen && (
-          <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
+          <div className="fixed top-16 right-0 z-20 backdrop-blur-sm bg-[#1a1a1a]/70 border-none  w-full p-16 flex flex-col justify-center items-center lg:hidden">
             <ul>
               {navItems.map((item, index) => (
                 <li key={index} className="py-4">
