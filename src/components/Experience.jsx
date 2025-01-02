@@ -9,8 +9,8 @@ const Experience = () => {
       <h1 className="flex mb-8 uppercase text-xl tracking-wide items-start">
         Skills
       </h1>
-      <div>
-        <table className="w-full text-sm text-left rtl:text-right text-neutral-400">
+      <div className='max-w-screen'>
+        <table className="w-full table-fixed text-sm text-left rtl:text-right text-neutral-400">
           <tbody>
             <tr className="">
                 <td className="px-6 py-4">Python</td>
