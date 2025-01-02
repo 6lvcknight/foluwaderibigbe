@@ -7,35 +7,20 @@ import { socialLinks } from '../constants/index';
 const Profile = () => {
   return (
     <div>
-        <h2 className='text-2xl sm:text-xl lg:text-2xl text-right mt-8 mb-10 tracking-wide'>
-        Hello, I'm
-        <br />
-        <span className='text-5xl sm:text-6xl lg:text-8xl bg-gradient-to-r from-red-800 to-purple-800 text-transparent bg-clip-text '>Folu Aderibigbe</span>
-        </h2>
-        <div className="flex flex-wrap justify-center mt-4">
-            <div className="p-2 w-1/2">
-                <img className='rounded-lg' src={profile} alt="profile" />
-            </div>
-            <div className="p-2 w-1/2">
-                <video autoPlay loop muted className='rounded-lg'>
-                    <source src={video} type='video/mp4' />
-                    your browser does not support the video tag
-                </video>
+        <div className="flex flex-col w-full md:items-center rounded-xs shadow md:flex-row ">
+            <img className="object-cover w-full rounded-t-2xl h-96 md:h-auto md:w-48 md:rounded-lg" src={profile} alt=""/>
+            <div className="flex flex-col items-start justify-between mt-4 pt-4 md:m-4 md:p-4 leading-normal">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Hey, I'm Folu, </h5>
+                <p className="mb-3 font-normal text-neutral-400">A software/machine learning engineer ---in the oven---.</p>
+                <div className='flex flex-row space-x-4 '>
+                    {socialLinks.map((link) => (
+                        <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.ariaLabel}>
+                            <link.icon className='text-2xl'/>
+                        </a>
+                    ))}
+                </div>
             </div>
         </div>
-        <div className="text-center p-10 py-4">
-            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-5xl mx-auto md:text-xl ">
-                Computer Science undergraduate at Ontario Tech University, specializing in software development and machine learning.
-            </p>
-            <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-                {socialLinks.map(link => (
-                    <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.ariaLabel}>
-                        <link.icon />
-                    </a>
-                ))}
-            </div>
-        </div>
-        
     </div>
   )
 }

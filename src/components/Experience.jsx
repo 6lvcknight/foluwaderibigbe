@@ -6,40 +6,38 @@ import resume from "../assets/resume.pdf"
 const Experience = () => {
   return (
     <div id='Skills' className="mt-20">
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide text-red-800">
-      Skills
-      </h2>
-      <div className="flex flex-wrap items-stretch">
-        {Experiences.map((option, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-2">
-            <div className="flex flex-col p-10 border border-neutral-700 rounded-xl min-h-[710px]">
-              <div className="flex-grow">
-                <p className="text-3xl mb-8 text-center">
-                    {option.title}
-                </p>
-                <p className="mb-8">
-                    <span className="text-4xl mt-6 mr-2">{option.price}</span>
-                    <span className="text-neutral-400 tracking-tight">/Month</span>
-                </p>
-                <ul>
-                    {option.features.map((feature, index) => (
-                    <li key={index} className="mt-8 flex items-center">
-                        <CheckCircle2 />
-                        <span className="ml-2">{feature}</span>
-                    </li>
-                    ))}
-                </ul>
-              </div>
-              
-              <a href={resume} target="_blank" rel="noopener noreferrer" 
-              className="inline-flex justify-center items-center text-center w-full h-12 p-5 mt-20 tracking-tight text-xl 
-                hover:bg-red-950 border border-red-800 rounded-lg transition duration-200">
-                    Subscribe
-              </a>
-              
-            </div>
-          </div>
-        ))}
+      <h1 className="flex mb-8 uppercase text-xl tracking-wide items-start">
+        Skills
+      </h1>
+      <div>
+        <table className="w-full text-sm text-left rtl:text-right text-neutral-400">
+          <tbody>
+            <tr className="">
+                <td className="px-6 py-4">Python</td>
+                <td className="px-6 py-4">Javascript</td>
+                <td className="px-6 py-4">Java</td>
+                <td className="px-6 py-4">SQL</td>
+            </tr>
+            <tr className="">
+                <td className="px-6 py-4">HTML</td>
+                <td className="px-6 py-4">CSS</td>
+                <td className="px-6 py-4">TypeScript</td>
+                <td className="px-6 py-4">C++</td>
+            </tr>
+            <tr className="">
+                <td className="px-6 py-4">Git/GitHub</td>
+                <td className="px-6 py-4">PyTorch</td>
+                <td className="px-6 py-4">Jupyter</td>
+                <td className="px-6 py-4">Flask</td>
+            </tr>
+            <tr className="">
+                <td className="px-6 py-4">ReactJS</td>
+                <td className="px-6 py-4">NodeJS</td>
+                <td className="px-6 py-4">PostgreSQL</td>
+                <td className="px-6 py-4">MongoDB</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

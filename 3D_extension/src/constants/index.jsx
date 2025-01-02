@@ -81,6 +81,7 @@ export const socialLinks = [
 export const Experiences = [
   {
     title: "Languages",
+    price: "$0",
     features: [
       "Python",
       "Java",
@@ -93,9 +94,11 @@ export const Experiences = [
   },
   {
     title: "Data Science",
+    price: "$10",
     features: [
       "Pandas",
       "Numpy",
+      "SciPy",
       "Matplotlib",
       "Seaborn",
       "Tableau",
@@ -104,10 +107,13 @@ export const Experiences = [
   },
   {
     title: "Software Developer",
+    price: "$200",
     features: [
       "React.js",
-      "Node.js",
+      "three.js",
+      "Next.js",
       "Flask",
+      "tailwind",
     ],
   },
 ];
