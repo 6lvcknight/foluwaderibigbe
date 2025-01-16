@@ -1,3 +1,8 @@
+.env
+.DS_Store
+env
+3D_extension
+
 # Logs
 logs
 *.log
