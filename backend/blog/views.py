@@ -26,21 +26,18 @@ class PostListView(generics.ListAPIView):
 class PostDetailView(generics.RetrieveAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [permissions.AllowAny]
-    lookup_field = 'slug'
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'pid'
     
 class PostAPIView(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
-
     def create(self, request, *args, **kwargs):
         payload = request.data
-
-        user_id = payload['user']
+        
+        user = self.request.user
         category_ids = payload.get('category', [])
         title = payload['title']
         summary = payload['summary']
@@ -49,7 +46,7 @@ class PostAPIView(generics.ListCreateAPIView):
         publishedat = payload['publishedat']
         content = payload['content']
 
-        user = User.objects.filter(id=user_id).first()
+        user = User.objects.filter(email=user).first()
 
         post = Post.objects.create(
             user=user,
@@ -69,9 +66,16 @@ class PostAPIView(generics.ListCreateAPIView):
 class PostDeleteView(generics.DestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    lookup_field = 'id'
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'pid'
 
-class ProjectListAPIView(generics.ListAPIView):
+class ProjectListView(generics.ListAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     permission_classes = [permissions.AllowAny]
+
+class ProjectDetailView(generics.RetrieveAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'pid'

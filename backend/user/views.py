@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import generics, permissions
 
-from models import User, Profile
-from serializers import MyTokenObtainPairSerializer, UserSerializer, ProfileSerializer
+from .models import User, Profile
+from .serializers import MyTokenObtainPairSerializer, UserSerializer, ProfileSerializer
 
 # Create your views here.
 
