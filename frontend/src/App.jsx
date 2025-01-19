@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Projects from './components/Projects'
+import { Login } from './components/user/Login'
 
 const Home = () => (
   <>
@@ -26,6 +27,7 @@ const App = () => {
             <Routes>
               <Route path={`/${home}`} element={<Home />} />
               <Route path={`/${home}/aboutme`} element={<About />} />
+              <Route path={`/${home}/login`} element={<Login />} />
             </Routes>
           </div>
         </Router>

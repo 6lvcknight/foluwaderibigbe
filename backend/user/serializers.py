@@ -12,6 +12,8 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         token['email'] = user.email
         token['username'] = user.username
+
+        return token
     
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, validators=[validate_password])
