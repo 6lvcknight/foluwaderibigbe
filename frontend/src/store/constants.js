@@ -1,1 +1,2 @@
-export const BASE_URL = 'http://localhost:8000/api/v1/';
+export const ACCESS_TOKEN = "access"
+export const REFRESH_TOKEN = "refresh"

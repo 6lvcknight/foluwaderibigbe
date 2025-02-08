@@ -26,11 +26,10 @@ class PostListView(generics.ListAPIView):
 class PostDetailView(generics.RetrieveAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
     lookup_field = 'pid'
     
-class PostAPIView(generics.ListCreateAPIView):
-    queryset = Post.objects.all()
+class PostAPIView(generics.CreateAPIView):
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -64,10 +63,13 @@ class PostAPIView(generics.ListCreateAPIView):
         return Response(PostSerializer(post).data, status=status.HTTP_201_CREATED)
 
 class PostDeleteView(generics.DestroyAPIView):
-    queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = 'pid'
+
+    def get_queryset(self):
+        user = self.request.user
+        return Post.objects.filter(user=user)
 
 class ProjectListView(generics.ListAPIView):
     queryset = Project.objects.all()

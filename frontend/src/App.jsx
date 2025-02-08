@@ -5,7 +5,12 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Projects from './components/Projects'
-import { Login } from './components/user/Login'
+import Login from './components/user/Login'
+import Logout from './components/user/Logout'
+import BlogPost from './components/user/BlogPost'
+import ProtectedRoute from './components/ProtectedRoute'
+import NotFound from './components/NotFound'
+
 
 const Home = () => (
   <>
@@ -28,6 +33,9 @@ const App = () => {
               <Route path={`/${home}`} element={<Home />} />
               <Route path={`/${home}/aboutme`} element={<About />} />
               <Route path={`/${home}/login`} element={<Login />} />
+              <Route path={`/${home}/logout`} element={<Logout />} />
+              <Route path={`/${home}/posts`} element={<ProtectedRoute> <BlogPost /> </ProtectedRoute>} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
         </Router>
