@@ -17,7 +17,6 @@ const Home = () => (
     <Profile />
     <Projects />
     <Experience />
-    <Footer />
   </>
 )
 
@@ -25,10 +24,10 @@ const App = () => {
   const home = "foluwaderibigbe"
   return (
     <>
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="flex flex-col min-h-screen max-w-4xl mx-auto px-6">
         <Router>
           <Navbar />
-          <div className=''>
+          <div className='flex-grow'>
             <Routes>
               <Route path={`/${home}`} element={<Home />} />
               <Route path={`/${home}/aboutme`} element={<About />} />
@@ -38,6 +37,7 @@ const App = () => {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
+          <Footer />
         </Router>
       </div>
     </>
