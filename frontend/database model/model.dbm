@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="1.2.0-alpha1" use-changelog="false" max-obj-count="8"
+	 last-position="0,-138" last-zoom="1" scene-rect="0,-140,1570.8,1216.8"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="new_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layers="0" fill-color="#e1e1e1" name-color="#000000" sql-disabled="true">
+</schema>
+
+<table name="user" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="320" y="80"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="firstName" default-value="NULL">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="middleName" default-value="NULL">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="lastName" default-value="NULL">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="mobile">
+		<type name="varchar" length="15"/>
+	</column>
+	<column name="email">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="password" not-null="true">
+		<type name="varchar" length="32"/>
+	</column>
+	<column name="bio" default-value="NULL">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="user_pk" type="pk-constr" table="public.&quot;user&quot;">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="post" layers="0" collapse-mode="2" max-obj-count="12" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="640" y="200"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="title">
+		<type name="varchar" length="75"/>
+	</column>
+	<column name="metaTitle">
+		<type name="varchar" length="100"/>
+	</column>
+	<column name="slug" not-null="true">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="summary">
+		<type name="text" length="0"/>
+	</column>
+	<column name="createdAt" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="updatedAt" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="publishedAt" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="content">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="post_pk" type="pk-constr" table="public.post">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_user" index="1"/>
+	</customidxs>
+	<customidxs object-type="constraint">
+		<object name="user_fk" index="1"/>
+	</customidxs></table>
+
+<table name="category" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1120" y="400"/>
+	<column name="id" not-null="true"
+	 identity-type="ALWAYS" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="title">
+		<type name="varchar" length="75"/>
+	</column>
+	<column name="metaTitle">
+		<type name="varchar" length="100"/>
+	</column>
+	<column name="slug" not-null="true">
+		<type name="varchar" length="100"/>
+	</column>
+	<column name="context">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="category_pk" type="pk-constr" table="public.category">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="tag" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="180" y="320"/>
+	<column name="id" not-null="true"
+	 identity-type="ALWAYS" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="title">
+		<type name="varchar" length="75"/>
+	</column>
+	<column name="metaTitle">
+		<type name="varchar" length="100"/>
+	</column>
+	<column name="slug" not-null="true">
+		<type name="varchar" length="100"/>
+	</column>
+	<column name="content">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="tag_pk" type="pk-constr" table="public.tag">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="post_tag" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="400" y="540"/>
+</table>
+
+<relationship name="post_has_many_post_tag" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#d4bcfd"
+	 src-table="public.post"
+	 dst-table="public.post_tag"
+	 src-required="true" dst-required="false"
+	 identifier="true"
+/>
+
+<relationship name="tag_has_many_post_tag" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#1e1e9a"
+	 src-table="public.tag"
+	 dst-table="public.post_tag"
+	 src-required="true" dst-required="false"
+	 identifier="true"
+/>
+
+<table name="post_category" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="720" y="560"/>
+</table>
+
+<relationship name="post_has_many_post_category" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#b0c94b"
+	 src-table="public.post"
+	 dst-table="public.post_category"
+	 src-required="true" dst-required="false"
+	 identifier="true"
+/>
+
+<relationship name="category_has_many_post_category" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#edc3dc"
+	 src-table="public.category"
+	 dst-table="public.post_category"
+	 src-required="true" dst-required="false"
+	 identifier="true"
+/>
+
+<relationship name="user_has_many_post" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#fdff71"
+	 src-table="public.&quot;user&quot;"
+	 dst-table="public.post"
+	 src-required="false" dst-required="false"/>
+
+<table name="project" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="920" y="40"/>
+	<column name="id" not-null="true"
+	 identity-type="BY DEFAULT" start="1" increment="1" min-value="0" max-value="9223372036854775807" cache="1">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="title">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="description" default-value="NULL">
+		<type name="varchar" length="100"/>
+	</column>
+	<column name="createdAt" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="url" default-value="NULL">
+		<type name="text" length="0"/>
+	</column>
+	<column name="github_url" default-value="NULL">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="experience_pk" type="pk-constr" table="public.project">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_user" index="1"/>
+	</customidxs>
+	<customidxs object-type="constraint">
+		<object name="user_fk" index="1"/>
+	</customidxs></table>
+
+<relationship name="user_has_many_experience" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#be9f06"
+	 src-table="public.&quot;user&quot;"
+	 dst-table="public.project"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
