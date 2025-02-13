@@ -12,6 +12,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import NotFound from './components/NotFound'
 import { ExperiencePost } from './components/user/ExperiencePost'
 import { Blog } from './components/Blog'
+import { Dashboard } from './components/user/Dashboard'
 
 
 const Home = () => (
@@ -23,7 +24,6 @@ const Home = () => (
 )
 
 const App = () => {
-  const home = "foluwaderibigbe"
   return (
     <>
       <div className="flex flex-col min-h-screen max-w-4xl mx-auto px-6">
@@ -31,13 +31,14 @@ const App = () => {
           <Navbar />
           <div className='flex-grow'>
             <Routes>
-              <Route path={`/${home}`} element={<Home />} />
-              <Route path={`/${home}/aboutme`} element={<About />} />
-              <Route path={`/${home}/login`} element={<Login />} />
-              <Route path={`/${home}/logout`} element={<Logout />} />
-              <Route path={`/${home}/blogs`} element={<Blog />} />
-              <Route path={`/${home}/blogposts`} element={<ProtectedRoute> <BlogPost /> </ProtectedRoute>} />
-              <Route path={`/${home}/experienceposts`} element={<ProtectedRoute> <ExperiencePost /> </ProtectedRoute>} />
+              <Route path={`/`} element={<Home />} />
+              <Route path={`/aboutme`} element={<About />} />
+              <Route path={`/login`} element={<Login />} />
+              <Route path={`/logout`} element={<Logout />} />
+              <Route path={`/blogs`} element={<Blog />} />
+              <Route path={`/blogposts`} element={<ProtectedRoute> <BlogPost /> </ProtectedRoute>} />
+              <Route path={`/experienceposts`} element={<ProtectedRoute> <ExperiencePost /> </ProtectedRoute>} />
+              <Route path={`/dashboard`} element={<ProtectedRoute> <Dashboard /> </ProtectedRoute>} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

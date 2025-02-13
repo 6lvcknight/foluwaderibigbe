@@ -17,7 +17,7 @@ const Login = () => {
       const response = await api.post('user/token/', { email, password })
       localStorage.setItem(ACCESS_TOKEN, response.data.access)
       localStorage.setItem(REFRESH_TOKEN, response.data.refresh)
-      navigate('/foluwaderibigbe/')
+      navigate('dashboard/')
     } catch (error) {
       console.log(error)
     } finally {
@@ -27,19 +27,20 @@ const Login = () => {
 
 
   return (
-    <div div="flex min-h-screen items-center justify-center ">
-      <form className="max-w-sm mx-auto flex flex-col items-center">
-        <div className="mb-5 w-2/3">
+      <form className="max-w-sm mx-auto">
+        <p className="text-4xl text-gray-900 dark:text-white mb-5">Welcome</p>
+        <div className="mb-5">
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-          <input value={email} type='email' onChange={(e) => setEmail(e.target.value)} className="border rounded-sm text-neutral-400 text-sm border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700 block w-full p-2.5" placeholder="email" required />
+          <input value={email} type='email' onChange={(e) => setEmail(e.target.value)} className="block p-2.5 w-full text-sm rounded-sm border focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700" placeholder="email" required />
         </div>
         <div className="mb-5">
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-          <input value={password} type='password' onChange={(e) => setPassword(e.target.value)} className="border rounded-sm text-neutral-400 text-sm border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700 block w-full p-2.5" required />
+          <input value={password} type='password' onChange={(e) => setPassword(e.target.value)} className="block p-2.5 w-full text-sm rounded-sm border focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700" required />
         </div>
-        <button onClick={handleSubmit} className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-sm focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700">Submit</button>
+        <div className='w-full flex justify-end'>
+          <button onClick={handleSubmit} className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-sm focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700">Submit</button>
+        </div>
       </form>
-    </div>
 
 
   )

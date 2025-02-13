@@ -79,12 +79,6 @@ class ProjectListView(generics.ListAPIView):
         query = Project.objects.all()
         return query.order_by('-createdat')
 
-class ProjectDetailView(generics.RetrieveAPIView):
-    queryset = Project.objects.all()
-    serializer_class = ProjectSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    lookup_field = 'pid'
-
 class ProjectCreateView(generics.CreateAPIView):
     serializer_class = ProjectSerializer
     permission_classes = [permissions.AllowAny]
