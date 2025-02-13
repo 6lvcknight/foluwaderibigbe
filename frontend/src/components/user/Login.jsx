@@ -17,7 +17,7 @@ const Login = () => {
       const response = await api.post('user/token/', { email, password })
       localStorage.setItem(ACCESS_TOKEN, response.data.access)
       localStorage.setItem(REFRESH_TOKEN, response.data.refresh)
-      navigate('dashboard/')
+      navigate('/')
     } catch (error) {
       console.log(error)
     } finally {

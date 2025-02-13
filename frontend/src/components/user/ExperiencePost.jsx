@@ -43,12 +43,12 @@ export const ExperiencePost = () => {
                 <label className="block mb-2 text-sm font-medium text-white">Date</label>
                 <DatePicker className="border text-sm rounded-sm block w-full ps-10 p-2.5 focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700" todayButton="Today" selected={date} onChange={(date) => setDate(date)} dateFormat='yyyy-MM-dd' />
             </div>
-            <div class="mb-5">
+            <div className="mb-5">
                 <label className="block mb-2 text-sm font-medium text-white">URL</label>
                 <input type="url" value={url} onChange={(e) => setUrl(e.target.value)} className="border text-sm rounded-sm block w-full p-2.5 focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700"/>
             </div>
-            <div class="mb-5">
-                <label for="base-input" className="block mb-2 text-sm font-medium text-white">Github URL</label>
+            <div className="mb-5">
+                <label htmlFor="base-input" className="block mb-2 text-sm font-medium text-white">Github URL</label>
                 <input type="url" value={github} onChange={(e) => setGithub(e.target.value)} className="border text-sm rounded-sm block w-full p-2.5 focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700"/>
             </div>
             <div className='w-full flex justify-end'>
