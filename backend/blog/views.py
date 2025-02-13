@@ -72,12 +72,40 @@ class PostDeleteView(generics.DestroyAPIView):
         return Post.objects.filter(user=user)
 
 class ProjectListView(generics.ListAPIView):
-    queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     permission_classes = [permissions.AllowAny]
+
+    def get_queryset(self):
+        query = Project.objects.all()
+        return query.order_by('-createdat')
 
 class ProjectDetailView(generics.RetrieveAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = 'pid'
+
+class ProjectCreateView(generics.CreateAPIView):
+    serializer_class = ProjectSerializer
+    permission_classes = [permissions.AllowAny]
+
+    def create(self, request, *args, **kwargs):
+        payload = request.data
+
+        title = payload['title']
+        description = payload['description']
+        text = payload['text']
+        createdat = payload['formattedDate']
+        url = payload['url']
+        github_url = payload['github']
+
+        project = Project.objects.create(
+            title=title,
+            description=description,
+            text=text,
+            createdat=createdat,
+            url=url,
+            github_url=github_url
+        )
+
+        return Response(ProjectSerializer(project).data, status=status.HTTP_201_CREATED)

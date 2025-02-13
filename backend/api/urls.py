@@ -17,5 +17,6 @@ urlpatterns = [
     path('blog/post-create/', blog_views.PostAPIView.as_view(), name='create_post'),
     path('blog/post-delete/<pid>', blog_views.PostDeleteView.as_view(), name='delete_post'),
 
-    path('blog/project/', blog_views.ProjectListView.as_view(), name='project_list'),
+    path('project/', blog_views.ProjectListView.as_view(), name='project_list'),
+    path('project/new/', blog_views.ProjectCreateView.as_view(), name='create_project'),
 ]

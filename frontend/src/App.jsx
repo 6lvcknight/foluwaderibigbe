@@ -10,6 +10,8 @@ import Logout from './components/user/Logout'
 import BlogPost from './components/user/BlogPost'
 import ProtectedRoute from './components/ProtectedRoute'
 import NotFound from './components/NotFound'
+import { ExperiencePost } from './components/user/ExperiencePost'
+import { Blog } from './components/Blog'
 
 
 const Home = () => (
@@ -33,7 +35,9 @@ const App = () => {
               <Route path={`/${home}/aboutme`} element={<About />} />
               <Route path={`/${home}/login`} element={<Login />} />
               <Route path={`/${home}/logout`} element={<Logout />} />
-              <Route path={`/${home}/posts`} element={<ProtectedRoute> <BlogPost /> </ProtectedRoute>} />
+              <Route path={`/${home}/blogs`} element={<Blog />} />
+              <Route path={`/${home}/blogposts`} element={<ProtectedRoute> <BlogPost /> </ProtectedRoute>} />
+              <Route path={`/${home}/experienceposts`} element={<ProtectedRoute> <ExperiencePost /> </ProtectedRoute>} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

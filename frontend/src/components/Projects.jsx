@@ -5,7 +5,7 @@ const Projects = () => {
     const [project, setProject] = useState([])
 
     useEffect(() => {
-        instance.get(`blog/project/`)
+        instance.get(`project/`)
             .then(res => {
                 setProject(res.data)
             })
