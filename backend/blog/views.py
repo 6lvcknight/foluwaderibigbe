@@ -103,3 +103,10 @@ class ProjectCreateView(generics.CreateAPIView):
         )
 
         return Response(ProjectSerializer(project).data, status=status.HTTP_201_CREATED)
+    
+class ProjectDeleteView(generics.DestroyAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    permission_classes = [permissions.AllowAny]
+    lookup_field = 'pid'
+    
