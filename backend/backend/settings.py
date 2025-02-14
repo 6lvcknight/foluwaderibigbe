@@ -30,7 +30,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = [env('BASE_URL')]
+ALLOWED_HOSTS = [env('BASE_URL'), '127.0.0.1', 'localhost']
 
 CORS_ALLOW_ALL_ORIGINS = True
 
