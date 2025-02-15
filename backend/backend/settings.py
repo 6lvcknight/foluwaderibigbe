@@ -33,10 +33,16 @@ DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = [env('BASE_URL'), '127.0.0.1', 'localhost']
 
-CSRF_TRUSTED_ORIGINS = [env('ORIGINS')]
+CSRF_TRUSTED_ORIGINS = [
+    env('PUBLIC_ORIGIN'),
+    env('PRIVATE_ORIGIN'), 
+    env('LOCAL_ORIGIN')
+]
 
 CORS_ALLOWED_ORIGINS = [
-    env('ORIGINS'),
+    env('PUBLIC_ORIGIN'),
+    env('PRIVATE_ORIGIN'), 
+    env('LOCAL_ORIGIN'),
 ]
 CORS_ALLOW_HEADERS = ['*']
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
