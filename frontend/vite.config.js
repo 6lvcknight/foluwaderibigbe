@@ -8,9 +8,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://backend.railway.internal:8080',
+        target: 'https://backend-production-4c8b.up.railway.app/',
         changeOrigin: true,
-        secure: false,
+        secure: true,
       },
     },
   }, 
