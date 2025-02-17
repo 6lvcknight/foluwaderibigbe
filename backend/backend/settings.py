@@ -40,19 +40,27 @@ CSRF_TRUSTED_ORIGINS = [
     env('BACKEND_ORIGIN')
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    env('PUBLIC_ORIGIN'),
-    env('PRIVATE_ORIGIN'), 
-    env('LOCAL_ORIGIN'),
-    env('BACKEND_ORIGIN')
-]
+# Allow specific origins
+#CORS_ALLOWED_ORIGINS = [
+#    env('PUBLIC_ORIGIN'),
+#    env('PRIVATE_ORIGIN'), 
+#    env('LOCAL_ORIGIN'),
+#    env('BACKEND_ORIGIN')
+#]
+
+# Allow all origins
+CORS_ALLOW_ALL_ORIGINS = True
+
+# For handling authentication
 CORS_ALLOW_CREDENTIALS = True
+
+# Allow all methods and headers
+CORS_ALLOW_METHODS = ['*']
 CORS_ALLOW_HEADERS = ['*']
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
