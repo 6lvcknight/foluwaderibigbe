@@ -57,6 +57,7 @@ CORS_ALLOW_CREDENTIALS = True
 # Allow all methods and headers
 CORS_ALLOW_METHODS = ['*']
 CORS_ALLOW_HEADERS = ['*']
+CORS_EXPOSE_HEADERS = ['Authorization']
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
 
