@@ -14,4 +14,10 @@ export default defineConfig({
       },
     },
   }, 
+  build: {
+    sourcemap: false,  // Disable source maps in production to prevent errors
+  },
+  define: {
+    'process.env': {},  // Fix issues related to process.env in Vite
+  },
 });
