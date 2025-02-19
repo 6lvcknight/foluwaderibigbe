@@ -9,9 +9,9 @@ const About = () => {
   return (
     <div className=''>
         <div className='flex flex-col items-center'>
-            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-white">
+            <a href='/login' className="mb-12 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-white">
                 About Me
-            </h1>
+            </a>
 
             
             <p className="mb-3 text-neutral-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-neutral-100 first-letter:me-3 first-letter:float-start">
