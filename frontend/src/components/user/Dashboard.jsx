@@ -1,20 +1,29 @@
 import React, { useState } from 'react'
 import { ExperiencePost } from './ExperiencePost'
-import { ProjectDisplay } from './ProjectDisplay';
+import { ProjectDisplay } from './ProjectDisplay'
+import { EditPost } from './EditPost'
 
 export const Dashboard = () => {
     const [activeSection, setActiveSection] = useState('projects')
+    const [editPid, setEditPid] = useState(null)
+
+    const handleEditProject = (pid) => {
+        setEditPid(pid)
+        setActiveSection('edit_project')
+    }
 
     const renderSection = () => {
         switch (activeSection) {
             case 'projects':
-                return <ProjectDisplay />
+                return <ProjectDisplay onEditProject={handleEditProject}/>
             case 'blogs':
                 return <p className="text-white">Blogs Section</p>;
             case 'new_blog':
                 return <p className="text-white">New Blog Form Here</p>;
             case 'new_project':
                 return <ExperiencePost />;
+            case 'edit_project':
+                return <EditPost pid={editPid} />;
             default:
                 return <p className="text-white">Select a section</p>;
         }

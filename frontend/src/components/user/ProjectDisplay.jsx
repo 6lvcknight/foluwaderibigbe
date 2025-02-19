@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import instance from '../../store/axios'
 
 
-export const ProjectDisplay = () => {
+export const ProjectDisplay = ({onEditProject}) => {
     const [project, setProject] = useState([])
     const [pid, setPid] = useState('')
 
@@ -34,12 +34,18 @@ export const ProjectDisplay = () => {
                     <h3 className="text-lg text-white">{item.title}</h3>
                     <p className="mb-4 text-base font-normal text-neutral-400">{item.description}</p>
                     <div className="flex gap-4">
-                    <button onClick={() => deleteProject(item.pid)} className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-sm focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-red-800 focus:ring-red-800">
-                        Delete
-                        <svg className="w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                        </svg>
-                    </button>
+                        <button onClick={() => onEditProject(item.pid)} className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-sm focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-red-800 focus:ring-red-800">
+                            Edit
+                            <svg className="w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </button>
+                        <button onClick={() => deleteProject(item.pid)} className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-sm focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-red-800 focus:ring-red-800">
+                            Delete
+                            <svg className="w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </button>
                     </div>
                 </li>
             ))}
