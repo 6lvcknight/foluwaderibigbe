@@ -2,32 +2,57 @@ import React, { useEffect, useState } from 'react'
 import api from '../../store/api';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { format } from 'date-fns';
+import { format, set } from 'date-fns';
+import { useNavigate } from 'react-router-dom'
 
 export const EditPost = ({pid}) => {
-    const [project, setProject] = useState([])
-
-    //fetch project by pid
-    useEffect(() => {
-        api.get(`project/update/${pid}/`)
-            .then(res => {
-                setProject(res.data)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [pid])
-    console.log(project)
-
-    const [title, setTitle] = useState(project.title)
+    const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [text, setText] = useState('')
     const [date, setDate] = useState(new Date())
-    const [github, setGithub] = useState('')
+    const [github_url, setGithub] = useState('')
     const [url, setUrl] = useState('')
-    const formattedDate = format(date, 'yyyy-MM-dd');
+    const createdat = format(date, 'yyyy-MM-dd')
+    const navigate = useNavigate()
 
-    // change on new values
+    // fetch project by pid
+    useEffect(() => {
+        const fetchProject = async () => {
+            try {
+                const response = await api.get(`project/update/${pid}/`)
+                setTitle(response.data.title)
+                setDescription(response.data.description)
+                setText(response.data.text)
+                const date = response.data.createdat
+                const year = date.split('-')[0]
+                const month = date.split('-')[1].replace(/^0+/, '')
+                const day = date.split('-')[2].replace(/^0+/, '')
+                setDate(new Date(year, month - 1, day))
+                setGithub(response.data.github_url)
+                setUrl(response.data.url)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchProject()
+    }, [pid])
+
+    // submit new values
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            const response = await api.put(`project/update/${pid}/`, { title, description, text, pid, createdat, github_url, url })
+            setTitle('');
+            setDescription('');
+            setText('');
+            setDate(new Date());
+            setGithub('');
+            setUrl('');
+            navigate('/dashboard')
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return (
         <form className="max-w-sm mx-auto">
@@ -56,10 +81,10 @@ export const EditPost = ({pid}) => {
             </div>
             <div className="mb-5">
                 <label htmlFor="base-input" className="block mb-2 text-sm font-medium text-white">Github URL</label>
-                <input type="url" value={github} onChange={(e) => setGithub(e.target.value)} className="border text-sm rounded-sm block w-full p-2.5 focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700"/>
+                <input type="url" value={github_url} onChange={(e) => setGithub(e.target.value)} className="border text-sm rounded-sm block w-full p-2.5 focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700"/>
             </div>
             <div className='w-full flex justify-end'>
-                <button onClick='{handleSubmit}' className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-sm text-neutral-400 border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700">Submit 
+                <button onClick={handleSubmit} className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-sm text-neutral-400 border-neutral-600 hover:text-white hover:bg-neutral-700 focus:ring-neutral-700">Submit 
                 </button>
             </div>
         </form>
