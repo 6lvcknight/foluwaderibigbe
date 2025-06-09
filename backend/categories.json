@@ -1,0 +1,183 @@
+[
+    {
+      "title": "Software Development",
+      "metaTitle": "Hands-On Software Development Tips & Projects",
+      "slug": "/software-development",
+      "context": "Explore code walkthroughs, programming tips, and app development stories based on my hands-on experience."
+    },
+    {
+      "title": "Machine Learning & AI",
+      "metaTitle": "Exploring Machine Learning Concepts and AI Applications",
+      "slug": "/machine-learning-ai",
+      "context": "Simplified explanations of machine learning concepts, model training logs, and practical AI project experiments."
+    },
+    {
+      "title": "Networking & Cybersecurity",
+      "metaTitle": "Networking and Cybersecurity Projects & Learning Logs",
+      "slug": "/networking-cybersecurity",
+      "context": "Covering packet tracing, CCNA practice labs, router configurations, and cybersecurity basics."
+    },
+    {
+      "title": "Side Projects",
+      "metaTitle": "Creative Side Projects & Build Logs",
+      "slug": "/side-projects",
+      "context": "Documenting small projects, MVPs, and build processes with insights, screenshots, and future goals."
+    },
+    {
+      "title": "Startup Journey",
+      "metaTitle": "Building a Startup from Scratch – My Journey",
+      "slug": "/startup-journey",
+      "context": "A look into building and scaling a startup with friends, covering ideation, MVPs, pitches, and funding."
+    },
+    {
+      "title": "Hackathons & Meetups",
+      "metaTitle": "Hackathon Projects and Tech Community Involvement",
+      "slug": "/hackathons-meetups",
+      "context": "Reflections from hackathons and tech meetups—what I built, learned, and how I grew my network."
+    },
+    {
+      "title": "Study & University Life",
+      "metaTitle": "Surviving University – Study Tips, Tools & Schedules",
+      "slug": "/study-university-life",
+      "context": "Advice on managing coursework, study systems, lecture reviews, and balancing school and life."
+    },
+    {
+      "title": "Research & Engineering",
+      "metaTitle": "Simplified Engineering and Research Insights",
+      "slug": "/research-engineering",
+      "context": "Breaking down thermodynamics, mechanical systems, and other engineering topics with practical insights."
+    },
+    {
+      "title": "Tech & Society",
+      "metaTitle": "The Social Impact of Technology and AI",
+      "slug": "/tech-and-society",
+      "context": "Exploring the intersection of tech, ethics, race, and power—AI bias, AGI risks, and digital culture."
+    },
+    {
+      "title": "Fitness & Performance",
+      "metaTitle": "Athletic Training Logs, Mobility, and Mindset",
+      "slug": "/fitness-performance",
+      "context": "A record of mobility training, strength building, speed work, and performance hacks from an athlete's POV."
+    },
+    {
+      "title": "Reflections & Lessons",
+      "metaTitle": "Reflections on Growth, Learning, and Resilience",
+      "slug": "/reflections-lessons",
+      "context": "Posts on failures, pivots, and personal development through tech, life, and study."
+    },
+    {
+      "title": "Book Notes",
+      "metaTitle": "Takeaways from Books that Changed My Thinking",
+      "slug": "/book-notes",
+      "context": "Quick breakdowns of key ideas from books I’ve read—tech, psychology, productivity, and more."
+    },
+    {
+      "title": "Digital Tools",
+      "metaTitle": "My Favorite Productivity and Dev Tools",
+      "slug": "/digital-tools",
+      "context": "Reviews and tutorials on tools I use regularly—VS Code extensions, CLI tools, Notion setups, etc."
+    },
+    {
+      "title": "Portfolio Updates",
+      "metaTitle": "New Additions to My Portfolio",
+      "slug": "/portfolio-updates",
+      "context": "Detailed logs when I add new projects or redesign my portfolio site—what changed and why."
+    },
+    {
+      "title": "Entrepreneurship",
+      "metaTitle": "Lessons from Building and Testing Startups",
+      "slug": "/entrepreneurship",
+      "context": "Insights from customer discovery, market validation, prototyping, and team building."
+    },
+    {
+      "title": "Career & Internships",
+      "metaTitle": "Internship Logs and Career Advice",
+      "slug": "/career-internships",
+      "context": "Experiences and takeaways from applying, interviewing, and working at tech companies."
+    },
+    {
+      "title": "APIs & Backend",
+      "metaTitle": "Building and Testing Backend APIs",
+      "slug": "/apis-backend",
+      "context": "Posts on designing REST APIs, Express.js routes, and database integration using MongoDB/PostgreSQL."
+    },
+    {
+      "title": "Frontend Experiments",
+      "metaTitle": "UI/UX Experiments and Frontend Builds",
+      "slug": "/frontend-experiments",
+      "context": "Posts on using React, Tailwind CSS, and Vite to build clean, fast, responsive web interfaces."
+    },
+    {
+      "title": "Version Control",
+      "metaTitle": "Using Git & GitHub Effectively",
+      "slug": "/version-control",
+      "context": "Tips and stories on tracking work, using branches, and managing projects via Git/GitHub."
+    },
+    {
+      "title": "Database Design",
+      "metaTitle": "Relational & NoSQL Data Modeling Insights",
+      "slug": "/database-design",
+      "context": "Posts on creating schemas, relationships, and performance-optimized queries for real apps."
+    },
+    {
+      "title": "Hardware & IT Support",
+      "metaTitle": "IT Support Stories and Hardware Fixes",
+      "slug": "/hardware-it-support",
+      "context": "From troubleshooting devices to upgrading infrastructure—my logs of hands-on tech support."
+    },
+    {
+      "title": "Digital Privacy",
+      "metaTitle": "Online Privacy & Data Ethics Explained",
+      "slug": "/digital-privacy",
+      "context": "Posts on data ownership, surveillance, ethical tech design, and how I secure my digital life."
+    },
+    {
+      "title": "Cloud & DevOps",
+      "metaTitle": "Exploring AWS, CI/CD, and Cloud Architecture",
+      "slug": "/cloud-devops",
+      "context": "Experiments and logs using cloud services, pipelines, and system deployment strategies."
+    },
+    {
+      "title": "Algorithms & DSA",
+      "metaTitle": "My DSA Learning Journey and LeetCode Logs",
+      "slug": "/algorithms-dsa",
+      "context": "Breaking down algorithm problems, patterns, and how I solve them in Python or JavaScript."
+    },
+    {
+      "title": "Python Tips",
+      "metaTitle": "Neat Python Tricks and Snippets",
+      "slug": "/python-tips",
+      "context": "Quick, useful patterns and tools in Python from my personal and academic projects."
+    },
+    {
+      "title": "JavaScript Deep Dives",
+      "metaTitle": "JavaScript Concepts Explained Simply",
+      "slug": "/javascript-deep-dives",
+      "context": "Breaking down tricky JS topics—closures, hoisting, promises, and async/await patterns."
+    },
+    {
+      "title": "Tech Philosophy",
+      "metaTitle": "Where Technology Meets Philosophy",
+      "slug": "/tech-philosophy",
+      "context": "Thought pieces on the role of tech in shaping identity, thought, and societal progress."
+    },
+    {
+      "title": "Productivity Hacks",
+      "metaTitle": "Systems and Habits for Getting Things Done",
+      "slug": "/productivity-hacks",
+      "context": "How I manage time, build habits, and organize my workflow to stay consistent and sharp."
+    },
+    {
+      "title": "Blog Building",
+      "metaTitle": "Behind the Scenes of My Blog Setup",
+      "slug": "/blog-building",
+      "context": "Meta posts on how this blog is built—frameworks, deployment tools, and design choices."
+    },
+    {
+      "title": "Weekend Builds",
+      "metaTitle": "Quick Weekend Projects with Real Use",
+      "slug": "/weekend-builds",
+      "context": "Small tools, automations, or scrappy web apps I built in 1–2 days just for fun or learning."
+    }
+  ]
+  

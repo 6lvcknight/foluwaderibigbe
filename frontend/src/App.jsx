@@ -12,6 +12,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import NotFound from './components/NotFound'
 import { Blog } from './components/Blog'
 import { Dashboard } from './components/user/Dashboard'
+import { ProjectSkeleton } from './components/skeleton/ProjectSkeleton'
 
 
 const Home = () => (
@@ -37,6 +38,7 @@ const App = () => {
               <Route path={`/blogs`} element={<Blog />} />
               <Route path={`/blogposts`} element={<ProtectedRoute> <BlogPost /> </ProtectedRoute>} />
               <Route path={`/dashboard`} element={<ProtectedRoute> <Dashboard /> </ProtectedRoute>} />
+              <Route path={`/projects`} element={<ProjectSkeleton />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
