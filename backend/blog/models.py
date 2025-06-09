@@ -8,8 +8,13 @@ def generate_short_uuid():
 class Category(models.Model):
     title = models.CharField(max_length=75, blank=True, null=True)
     metatitle = models.CharField(db_column='metaTitle', max_length=100, blank=True, null=True)  # Field name made lowercase.
-    slug = models.CharField(max_length=100)
     context = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name_plural = "Categories"
+        ordering = ['title']
 
 class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -27,7 +32,6 @@ class Tag(models.Model):
     title = models.CharField(max_length=75, blank=True, null=True)
     post = models.ManyToManyField(Post, related_name='post_tag')
     metatitle = models.CharField(db_column='metaTitle', max_length=100, blank=True, null=True)  # Field name made lowercase.
-    slug = models.CharField(max_length=100)
     content = models.TextField(blank=True, null=True)
 
 class Project(models.Model):

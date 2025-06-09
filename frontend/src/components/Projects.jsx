@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import instance from '../store/axios';
+import api from '../store/api';
  
 const Projects = () => {
     const [project, setProject] = useState([])
 
     useEffect(() => {
-        instance.get(`project/`)
+        api.get(`project/`)
             .then(res => {
                 setProject(res.data)
             })
