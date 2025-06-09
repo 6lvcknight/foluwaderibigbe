@@ -24,7 +24,7 @@ export const ExperiencePost = () => {
             setGithub('');
             setUrl('');
         } catch (error) {
-            console.log(error)
+            console.log(error.response.data.error)
         }
     }
     return (
