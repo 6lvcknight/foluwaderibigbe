@@ -29,7 +29,7 @@ const BlogView = ({blog}) => {
         }
     return (
         <>
-            <div className="flex justify-center mb-4">
+            {/*<div className="flex justify-center mb-4">
                 <button onClick={() => onEditProject(blogData.metatitle)} className="inline-flex items-center px-4 py-2 text-sm font-medium border-l border-t border-b rounded-s-md focus:z-10 focus:ring-4 focus:outline-none text-neutral-400 border-neutral-600 hover:text-white hover:bg-blue-800 focus:ring-red-800">
                     Edit
                     <svg className="w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
@@ -43,6 +43,7 @@ const BlogView = ({blog}) => {
                     </svg>
                 </button>
             </div>
+            */}
             <div className='flex flex-col items-center'>
             <h1 href='/login' className="mb-12 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-white">
                 {blogData.title}

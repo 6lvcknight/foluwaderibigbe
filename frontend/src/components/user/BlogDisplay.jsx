@@ -2,43 +2,44 @@ import React, { useEffect, useState } from 'react';
 import api from '../../store/api';
 import { ProjectSkeleton } from '../skeleton/ProjectSkeleton';
 
+
 const BlogDisplay = ({onViewBlog}) => {
     const [blog, setBlog] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        api.get(`blog/post`)
-            .then(res => {
-                setBlog(res.data)
-                setIsLoading(false)
-            })
-            .catch(err => {
-                console.log(err.response.data.error)
-            })
+      api.get(`blog/post`)
+        .then(res => {
+            setBlog(res.data)
+            setIsLoading(false)
+        })
+        .catch(err => {
+            console.log(err.response.data.error)
+        })
     }, [])
 
     // 1. Group by formatted date string
     const groupedByDate = blog.reduce((acc, item) => {
-        const dateStr = new Date(item.publishedat).toLocaleDateString('en-US', {
+      const dateStr = new Date(item.publishedat).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-        });
+      });
 
-        if (!acc[dateStr]) {
+      if (!acc[dateStr]) {
         acc[dateStr] = [];
-        }
-        acc[dateStr].push(item);
-        return acc;
+      }
+      acc[dateStr].push(item);
+      return acc;
     }, {})
 
     // 2. Sort dates in descending order (most recent first). Remove if you want original order.
     const sortedDates = Object.keys(groupedByDate).sort(
-        (a, b) => new Date(b) - new Date(a)
+      (a, b) => new Date(b) - new Date(a)
     )
 
     if (isLoading) {
-        return <ProjectSkeleton />
+      return <ProjectSkeleton />
     }
   return (
     <ol className="p-5 mb-4 rounded-sm relative border-s border-neutral-700">

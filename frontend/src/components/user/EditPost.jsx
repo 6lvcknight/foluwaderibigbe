@@ -31,7 +31,7 @@ export const EditPost = ({pid}) => {
                 setGithub(response.data.github_url)
                 setUrl(response.data.url)
             } catch (error) {
-                console.log(error)
+                console.log(error.response.data.error)
             }
         }
         fetchProject()
@@ -50,7 +50,7 @@ export const EditPost = ({pid}) => {
             setUrl('');
             navigate('/dashboard')
         } catch (error) {
-            console.log(error)
+            console.log(error.response.data.error)
         }
     }
 

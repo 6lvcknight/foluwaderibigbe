@@ -28,7 +28,7 @@ class PostListView(generics.ListAPIView):
 class PostDetailView(generics.RetrieveAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
     lookup_field = 'metatitle'
     
 class PostAPIView(generics.CreateAPIView):

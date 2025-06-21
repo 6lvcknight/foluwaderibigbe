@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import api from '../store/api';
+import { ProjectSkeleton } from './skeleton/ProjectSkeleton';
  
 const Projects = () => {
     const [project, setProject] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         api.get(`project/`)
             .then(res => {
                 setProject(res.data)
+                setLoading(false)
             })
             .catch(err => {
-                console.log(err)
+                console.log(err.response.data.error)
             })
     }, [])
+
+    if (loading) {
+        return <ProjectSkeleton />
+    }
+
   return (
     <div>
         <div id='Projects' className="flex flex-col mt-20">
